@@ -23,7 +23,7 @@ a {
 /* Header */
 .app-name {
   background-color: var(--queen-blue);
-  color: var(--orange-red);
+  color: var(--yellow-orange);
   height: 4rem;
   font-size: 2.5rem;
   display: flex;
@@ -41,6 +41,7 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  padding-bottom: 1rem;
 }
 
 .search-flex select {
@@ -48,6 +49,11 @@ a {
   padding: 4px;
   outline: 1px solid var(--zomp);
   border: 1px solid var(--zomp);
+}
+
+.search-flex select:focus {
+  border: 1px solid var(--yellow-orange);
+  outline: 1px solid var(--yellow-orange);
 }
 
 .flex-group input {
@@ -62,8 +68,12 @@ a {
   outline: 1px solid var(--yellow-orange);
 }
 
-/* Explore Button */
-.explore-btn {
+.flex-group input::placeholder {
+  font-size: 0.85rem;
+}
+
+/* search Button */
+.search-btn {
   background-color: var(--zomp);
   color: white;
   letter-spacing: 2px;
@@ -71,7 +81,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 2rem;
-  width: 4rem;
+  width: 5rem;
   transition: all 1s;
   z-index: 2;
   outline: none;
@@ -80,11 +90,11 @@ a {
   display: inline;
 }
 
-.explore-btn:hover {
+.search-btn:hover {
   background-color: var(--yellow-orange);
 }
 
-.explore-btn:active {
+.search-btn:active {
   transform: scale(0.9);
 }
 
@@ -111,10 +121,10 @@ a {
 .error {
   border: 1px solid var(--red-salsa);
   outline: 1px solid var(--red-salsa);
-  color: #ff0033;
+  color: var(--red-salsa);
   background-color: rgba(255, 0, 51, 0.2);
   width: 90%;
   text-align: center;
-  margin: 0.5rem auto 0 auto;
+  margin: 0 auto 0 auto;
   padding: 3px;
 }

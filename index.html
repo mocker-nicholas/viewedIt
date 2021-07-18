@@ -14,35 +14,41 @@
   </head>
   <body>
     <header>
-      <nav></nav>
-      <div class="showcase">
-        <a href="#" id="exploreBtn" class="btn-primary">Explore</a>
+      <div class="app-name">
+        <div class="logo">
+          <div>viewedIt <i class="fas fa-search"></i></div>
+        </div>
       </div>
     </header>
     <!----------------------------------          ---------------------------------->
-    <!-------------------------------- Description  -------------------------------->
+    <!-------------------------------- Search  -------------------------------->
     <!----------------------------------          ---------------------------------->
-    <section id="description">
-      <div class="content">
-        <div class="solution">
-          <p>Ever wanted to be able to view your reddit history?</p>
-          <p>Now, you can!</p>
-          <p>Simply Generate a feed and view at a few posts</p>
-          <p>Then click the history bar to see what you have viewed!</p>
+    <section id="search">
+      <div class="search-flex">
+        <div class="flex-group">
+          <input type="text" name="subreddit" id="subreddit" placeholder="Enter a subreddit">
         </div>
+        <select name="sort" id="sort">
+          <option value="top">Top</option>
+          <option value="hot">Hot</option>
+          <option value="new">New</option>
+        </select>
+        <button class="explore-btn" id="explore-btn">Search</button>
       </div>
     </section>
+
+    <!----------------------------------          ---------------------------------->
+    <!---------------------------------- Feed  ---------------------------------->
+    <!----------------------------------          ---------------------------------->
+
+    <div class="feed" id="feed"></div>
 
     <!----------------------------------          ---------------------------------->
     <!---------------------------------- Section  ---------------------------------->
     <!----------------------------------          ---------------------------------->
     <section id="history">
-      <a href="#" class="btn-secondary"></a>
+      <a href="history.html" class="btn-secondary">View History</a>
     </section>
-
-    <!----------------------------------          ---------------------------------->
-    <!---------------------------------- Section  ---------------------------------->
-    <!----------------------------------          ---------------------------------->
 
     <!----------------------------------          ---------------------------------->
     <!---------------------------------- Section  ---------------------------------->

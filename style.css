@@ -1,9 +1,9 @@
 :root {
-  --flame: #d36135;
-  --green-sheen: #83bca9;
-  --chesnut: #a24936;
-  --hunter-green: #3e5641;
-  --charleston-green: #282b28;
+  --red-salsa: rgb(249, 65, 68);
+  --yellow-orange: rgb(248, 150, 30);
+  --queen-blue: rgb(87, 117, 144);
+  --zomp: rgb(67, 170, 139);
+  --orange-red: rgb(243, 114, 44);
 }
 
 * {
@@ -20,42 +20,101 @@ a {
   text-decoration: none;
 }
 
-.btn-primary {
-  background-color: var(--chesnut);
+/* Header */
+.app-name {
+  background-color: var(--queen-blue);
+  color: var(--orange-red);
+  height: 4rem;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  margin-left: 1rem;
+}
+
+/* Search section */
+.search-flex {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.search-flex select {
+  font-size: 1rem;
+  padding: 4px;
+  outline: 1px solid var(--zomp);
+  border: 1px solid var(--zomp);
+}
+
+.flex-group input {
+  font-size: 1rem;
+  padding: 4px;
+  outline: 1px solid var(--zomp);
+  border: 1px solid var(--zomp);
+}
+
+.flex-group input:focus {
+  border: 1px solid var(--yellow-orange);
+  outline: 1px solid var(--yellow-orange);
+}
+
+/* Explore Button */
+.explore-btn {
+  background-color: var(--zomp);
   color: white;
   letter-spacing: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 120px;
-}
-
-/* Header */
-.showcase {
-  height: 40vh;
-  background: url("https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60")
-    center center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-}
-
-.showcase .btn-primary {
-  margin-top: 20vh;
+  height: 2rem;
+  width: 4rem;
   transition: all 1s;
+  z-index: 2;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline;
 }
 
-.showcase .btn-primary:hover {
-  background-color: var(--flame);
+.explore-btn:hover {
+  background-color: var(--yellow-orange);
 }
 
-.showcase .btn-primary:active {
+.explore-btn:active {
   transform: scale(0.9);
 }
 
-.showcase .btn-primary:visited {
-  color: white;
-  background-color: var(--chesnut);
+/* Description */
+#description {
+  background: linear-gradient(#feafa2, #9198e5);
 }
-
 /* Feed */
+
+/* History Button */
+.btn-secondary {
+  background-color: var(--charleston-green);
+  color: white;
+  letter-spacing: 1.5px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+/* Messages */
+.error {
+  border: 1px solid var(--red-salsa);
+  outline: 1px solid var(--red-salsa);
+  color: #ff0033;
+  background-color: rgba(255, 0, 51, 0.2);
+  width: 90%;
+  text-align: center;
+  margin: 0.5rem auto 0 auto;
+  padding: 3px;
+}

@@ -10,10 +10,12 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "STIX Two Math", serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -24,8 +26,8 @@ a {
 .app-name {
   background-color: var(--queen-blue);
   color: var(--yellow-orange);
-  height: 4rem;
-  font-size: 2.5rem;
+  height: 3.5rem;
+  font-size: 2.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +43,7 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .search-flex select {
@@ -49,6 +51,7 @@ a {
   padding: 4px;
   outline: 1px solid var(--zomp);
   border: 1px solid var(--zomp);
+  width: 20%;
 }
 
 .search-flex select:focus {
@@ -56,16 +59,20 @@ a {
   outline: 1px solid var(--yellow-orange);
 }
 
+.flex-group {
+  width: 50%;
+}
 .flex-group input {
   font-size: 1rem;
   padding: 4px;
-  outline: 1px solid var(--zomp);
-  border: 1px solid var(--zomp);
+  outline: 2px solid var(--zomp);
+  border: 2px solid var(--zomp);
+  width: 100%;
 }
 
 .flex-group input:focus {
-  border: 1px solid var(--yellow-orange);
-  outline: 1px solid var(--yellow-orange);
+  border: 2px solid var(--yellow-orange);
+  outline: 2px solid var(--yellow-orange);
 }
 
 .flex-group input::placeholder {
@@ -80,7 +87,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 1.8rem;
   width: 5rem;
   transition: all 1s;
   z-index: 2;
@@ -88,6 +95,7 @@ a {
   border: none;
   cursor: pointer;
   display: inline;
+  font-size: 1rem;
 }
 
 .search-btn:hover {
@@ -98,29 +106,28 @@ a {
   transform: scale(0.9);
 }
 
-/* Description */
-#description {
-  background: linear-gradient(#feafa2, #9198e5);
-}
 /* Feed */
-
-/* History Button */
-.btn-secondary {
-  background-color: var(--charleston-green);
-  color: white;
-  letter-spacing: 1.5px;
-  position: fixed;
-  bottom: 0;
+.post {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid var(--queen-blue);
+  border-radius: 5px;
+  background-color: rgba(87, 117, 144, 0.1);
+}
+
+.post p {
+  margin-left: 0.5rem;
+}
+
+.post img {
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
 }
 /* Messages */
 .error {
   border: 1px solid var(--red-salsa);
-  outline: 1px solid var(--red-salsa);
   color: var(--red-salsa);
   background-color: rgba(255, 0, 51, 0.2);
   width: 90%;

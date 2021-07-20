@@ -1,7 +1,7 @@
 const exploreBtn = document.querySelector("#search-btn");
 const subreddit = document.querySelector("#subreddit");
 const sort = document.querySelector("#sort");
-const time = document.querySelector('#time');
+const time = document.querySelector("#time");
 const searchSection = document.querySelector("#search");
 const feed = document.querySelector("#feed");
 
@@ -31,26 +31,8 @@ const search = (subreddit, sort, time) => {
     .catch((err) => console.log(err));
 };
 
-// Clear the feed
-const clearFeed = () => {
-  feed.innerHTML = '';
-}
-
-// Create the post element
-const createPost = (post) => {
-  const postDiv = document.createElement("div");
-  console.log(post);
-  postDiv.classList.add("post");
-  postDiv.innerHTML = `
-    <img onError='removeElement(this)' src=${imgCheck(post)}>
-    <p><a target="_blank" href="${post.url}">${post.title}</a></p>
-  `;
-  feed.appendChild(postDiv);
-}
-
-////////////////////////////////////////////////////
-////////////////// Generate Feed ///////////////////
-exploreBtn.addEventListener("click", (e) => {
+// Generate the feed
+const generateFeed = () => {
   if (document.querySelectorAll(".error")[0]) {
     document.querySelectorAll(".error")[0].remove();
   }
@@ -64,7 +46,36 @@ exploreBtn.addEventListener("click", (e) => {
 
   search(subreddit.value, sort.value, time.value).then((results) => {
     results.forEach((post) => {
-      createPost(post)
+      createPost(post);
     });
   });
+};
+
+// Clear the feed
+const clearFeed = () => {
+  feed.innerHTML = "";
+};
+
+// Create the post element
+const createPost = (post) => {
+  const postDiv = document.createElement("div");
+  console.log(post);
+  postDiv.classList.add("post");
+  postDiv.innerHTML = `
+    <img onError='removeElement(this)' src=${imgCheck(post)}>
+    <p><a target="_blank" href="${post.url}">${post.title}</a></p>
+  `;
+  feed.appendChild(postDiv);
+};
+
+////////////////////////////////////////////////////
+////////////////// Generate Feed ///////////////////
+exploreBtn.addEventListener("click", (e) => {
+  generateFeed();
+});
+
+subreddit.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    generateFeed();
+  }
 });

@@ -42,7 +42,7 @@ const createPost = (post) => {
   console.log(post);
   postDiv.classList.add("post");
   postDiv.innerHTML = `
-    <img onError='removeElement(this)' src=${post.preview.images[0].source.url}>
+    <img onError='removeElement(this)' src=${imgCheck(post)}>
     <p><a target="_blank" href="${post.url}">${post.title}</a></p>
   `;
   feed.appendChild(postDiv);

@@ -119,17 +119,19 @@ a {
   border: 1px solid var(--queen-blue);
   border-radius: 5px;
   background-color: rgba(87, 117, 144, 0.1);
+  position: relative;
+}
+
+.post img {
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 5px;
 }
 
 .post p {
   margin-left: 0.5rem;
 }
 
-.post img {
-  width: 30%;
-  height: 100%;
-  border-radius: 5px;
-}
 /* Messages */
 .error {
   border: 1px solid var(--red-salsa);
@@ -137,25 +139,6 @@ a {
   background-color: rgba(255, 0, 51, 0.2);
   width: 90%;
   text-align: center;
-  margin: 0 auto 0 auto;
+  margin: 0.5rem auto 0 auto;
   padding: 3px;
-}
-
-/* Animations */
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

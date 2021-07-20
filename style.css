@@ -37,6 +37,11 @@ a {
   margin-left: 1rem;
 }
 
+.logo i {
+  font-size: 2rem;
+  padding-top: 0.5rem;
+}
+
 /* Search section */
 .search-flex {
   margin-top: 0.5rem;
@@ -87,15 +92,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1.8rem;
-  width: 5rem;
+  height: 2rem;
+  width: calc(100% - 1rem);
   transition: all 1s;
   z-index: 2;
   outline: none;
   border: none;
   cursor: pointer;
-  display: inline;
   font-size: 1rem;
+  margin: 0 auto;
 }
 
 .search-btn:hover {
@@ -134,4 +139,23 @@ a {
   text-align: center;
   margin: 0 auto 0 auto;
   padding: 3px;
+}
+
+/* Animations */
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

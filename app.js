@@ -1,6 +1,7 @@
 const exploreBtn = document.querySelector("#search-btn");
 const subreddit = document.querySelector("#subreddit");
 const sort = document.querySelector("#sort");
+const time = document.querySelector('#time');
 const searchSection = document.querySelector("#search");
 const feed = document.querySelector("#feed");
 
@@ -16,9 +17,10 @@ const showError = (elmt, msg) => {
   }, 3000);
 };
 
-const search = (subreddit, sort) => {
+// Search for a subreddit
+const search = (subreddit, sort, time) => {
   return fetch(
-    `https://www.reddit.com/r/${subreddit}/${sort}/.json?count=20&t=day&limit=5`
+    `https://www.reddit.com/r/${subreddit}/${sort}/.json?count=20&t=${time}&limit=50`
   )
     .then((res) => {
       return res.json();
@@ -29,6 +31,25 @@ const search = (subreddit, sort) => {
     .catch((err) => console.log(err));
 };
 
+// Clear the feed
+const clearFeed = () => {
+  feed.innerHTML = '';
+}
+
+// Create the post element
+const createPost = (post) => {
+  const postDiv = document.createElement("div");
+  console.log(post);
+  postDiv.classList.add("post");
+  postDiv.innerHTML = `
+    <img onError='removeElement(this)' src=${post.thumbnail}>
+    <p><a target="_blank" href="${post.url}">${post.title}</a></p>
+  `;
+  feed.appendChild(postDiv);
+}
+
+////////////////////////////////////////////////////
+////////////////// Generate Feed ///////////////////
 exploreBtn.addEventListener("click", (e) => {
   if (document.querySelectorAll(".error")[0]) {
     document.querySelectorAll(".error")[0].remove();
@@ -39,16 +60,11 @@ exploreBtn.addEventListener("click", (e) => {
     return;
   }
 
-  search(subreddit.value, sort.value).then((results) => {
+  clearFeed();
+
+  search(subreddit.value, sort.value, time.value).then((results) => {
     results.forEach((post) => {
-      const postDiv = document.createElement("div");
-      console.log(post);
-      postDiv.classList.add("post");
-      postDiv.innerHTML = `
-        <img src="${post.thumbnail}">
-        <p><a target="_blank" href="${post.url}">${post.title}</a></p>
-      `;
-      feed.appendChild(postDiv);
+      createPost(post)
     });
   });
 });

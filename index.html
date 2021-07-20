@@ -39,7 +39,6 @@
             name="subreddit"
             id="subreddit"
             placeholder="Enter Subreddit"
-            value="funny"
           />
         </div>
         <select name="sort" id="sort">
@@ -47,8 +46,13 @@
           <option value="hot">Hot</option>
           <option value="new">New</option>
         </select>
-        <button class="search-btn" id="search-btn">Search</button>
+        <select name="time" id="time">
+          <option value="day">Today</option>
+          <option value="month">Month</option>
+          <option value="all">Forever</option>
+        </select>
       </div>
+      <button class="search-btn" id="search-btn">Search</button>
     </section>
 
     <!----------------------------------          ---------------------------------->
@@ -56,42 +60,11 @@
     <!----------------------------------          ---------------------------------->
 
     <div class="feed" id="feed">
-      <!-- <div class="post">
-        <img
-          src="https://b.thumbs.redditmedia.com/P4LtMaFgF42SFcgRMQOfQJiGDvbUUP4tMOC31ey3e9A.jpg"
-        />
-        <p>
-          <a
-            target="_blank"
-            href="https://www.reddit.com//r/funny/comments/omvvjz/sat_next_to_these_ladies_who_insisted_our_dog/"
-            >Sat next to these ladies who insisted our dog FaceTime with theirs
-            🥺</a
-          >
-        </p>
-      </div>
       <div class="post">
-        <img
-          src="https://b.thumbs.redditmedia.com/3sClT3v5ksBlKj_uMdU5oBgAsBbkSsNTgBH6GbiOGas.jpg"
-        />
-        <p>
-          <a
-            target="_blank"
-            href="https://www.reddit.com//r/funny/comments/onc2dk/the_most_intense_garden_sprinkler/"
-            >The most intense garden sprinkler</a
-          >
-        </p>
+        <img onerror="removeElement(this)" src="https://b.thumbs.redditmedia.com/nnKB8TLGGGAcmiULieiRCQyidncBIaUiGjX8zPzJq3M.jpg">
+        <p><a target="_blank" href="https://imgur.com/1suOWfR">It is best to call a specialist</a></p>
+        <!-- <p><span class="post-number">1</span></p> -->
       </div>
-      <div class="post">
-        <img src="nsfw" />
-        <p>
-          <a
-            target="_blank"
-            href="https://www.reddit.com//r/funny/comments/omumwc/found_this_gem_of_a_fountain_today_not_sure_what/"
-            >Found this gem of a fountain today. Not sure what it is supposed to
-            depict</a
-          >
-        </p>
-      </div> -->
     </div>
 
     <!----------------------------------          ---------------------------------->
@@ -106,5 +79,6 @@
     <!---------------------------------- Section  ---------------------------------->
     <!----------------------------------          ---------------------------------->
   </body>
+  <script src="errorHandle.js"></script>
   <script src="app.js"></script>
 </html>

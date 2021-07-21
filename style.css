@@ -122,14 +122,28 @@ a {
   position: relative;
 }
 
+.post-content {
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .post img {
   max-width: 6rem;
   max-height: 6rem;
   border-radius: 5px;
 }
 
-.post p {
+#title {
   margin-left: 0.5rem;
+}
+
+#comments {
+  color: var(--queen-blue);
+  margin-left: 0.5rem;
+  position: absolute;
+  bottom: 0.5rem;
 }
 
 /* Messages */

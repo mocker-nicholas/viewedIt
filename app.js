@@ -62,8 +62,13 @@ const createPost = (post) => {
   console.log(post);
   postDiv.classList.add("post");
   postDiv.innerHTML = `
+  <div id="post-image">
     <img onError='removeElement(this)' src=${imgCheck(post)}>
-    <p><a target="_blank" href="${post.url}">${post.title}</a></p>
+  </div>
+  <div id="post-content">
+    <p id="title"><a target="_blank" href="${post.url}">${post.title}</a></p>
+    <p id="comments"><a target="_blank" href="https://www.reddit.com${post.permalink}" id="permalink">View Comments</a></p>
+  </div>
   `;
   feed.appendChild(postDiv);
 };

@@ -4,6 +4,8 @@ const sort = document.querySelector("#sort");
 const time = document.querySelector("#time");
 const searchSection = document.querySelector("#search");
 const feed = document.querySelector("#feed");
+const searchBtn = document.querySelector('#searchBtn');
+const historyFeed = document.querySelector("#historyFeed");
 
 // Show an error
 const showError = (elmt, msg) => {
@@ -20,7 +22,7 @@ const showError = (elmt, msg) => {
 // Search for a subreddit
 const search = (subreddit, sort, time) => {
   return fetch(
-    `https://www.reddit.com/r/${subreddit}/${sort}/.json?count=20&t=${time}&limit=50`
+    `https://www.reddit.com/r/${subreddit}/${sort}/.json?count=20&t=${time}&limit=5`
   )
     .then((res) => {
       return res.json();
@@ -29,6 +31,24 @@ const search = (subreddit, sort, time) => {
       return data.data.children.map((data) => data.data);
     })
     .catch((err) => console.log(err));
+};
+
+// Create the post element
+const createPost = (post) => {
+  const postDiv = document.createElement("div");
+  postDiv.classList.add("post");
+  postDiv.classList.add("storable");
+  postDiv.innerHTML = `
+  <div id="post-image">
+    <img onError='removeElement(this)' src=${imgCheck(post)}>
+  </div>
+  <div id="post-content">
+    <p id="title"><a target="_blank" href="${post.url}">${post.title}</a></p>
+    <p id="comments" class="storable"><a target="_blank" href="https://www.reddit.com${post.permalink}" id="permalink">View Comments</a></p>
+  </div>
+  `;
+  feed.appendChild(postDiv);
+  
 };
 
 // Generate the feed
@@ -56,23 +76,6 @@ const clearFeed = () => {
   feed.innerHTML = "";
 };
 
-// Create the post element
-const createPost = (post) => {
-  const postDiv = document.createElement("div");
-  console.log(post);
-  postDiv.classList.add("post");
-  postDiv.innerHTML = `
-  <div id="post-image">
-    <img onError='removeElement(this)' src=${imgCheck(post)}>
-  </div>
-  <div id="post-content">
-    <p id="title"><a target="_blank" href="${post.url}">${post.title}</a></p>
-    <p id="comments"><a target="_blank" href="https://www.reddit.com${post.permalink}" id="permalink">View Comments</a></p>
-  </div>
-  `;
-  feed.appendChild(postDiv);
-};
-
 ////////////////////////////////////////////////////
 ////////////////// Generate Feed ///////////////////
 exploreBtn.addEventListener("click", (e) => {
@@ -84,3 +87,11 @@ subreddit.addEventListener("keydown", (e) => {
     generateFeed();
   }
 });
+
+////////////////////////////////////////////////////
+////////////////// Store History ///////////////////
+window.addEventListener('click', (e) => {
+  if(e.target.classList.contains('storable')){
+    console.log(e.target);
+  }
+})

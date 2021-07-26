@@ -4,7 +4,7 @@ const sort = document.querySelector("#sort");
 const time = document.querySelector("#time");
 const searchSection = document.querySelector("#search");
 const feed = document.querySelector("#feed");
-const searchBtn = document.querySelector('#searchBtn');
+const searchBtn = document.querySelector("#searchBtn");
 const historyFeed = document.querySelector("#historyFeed");
 
 // Show an error
@@ -37,18 +37,20 @@ const search = (subreddit, sort, time) => {
 const createPost = (post) => {
   const postDiv = document.createElement("div");
   postDiv.classList.add("post");
-  postDiv.classList.add("storable");
   postDiv.innerHTML = `
   <div id="post-image">
     <img onError='removeElement(this)' src=${imgCheck(post)}>
   </div>
   <div id="post-content">
-    <p id="title"><a target="_blank" href="${post.url}">${post.title}</a></p>
-    <p id="comments" class="storable"><a target="_blank" href="https://www.reddit.com${post.permalink}" id="permalink">View Comments</a></p>
+    <p id="title"><a class="storable" target="_blank" href="https://www.reddit.com${
+      post.permalink
+    }">${post.title}</a></p>
+    <p id="comments"><a class="storable" target="_blank" href="https://www.reddit.com${
+      post.permalink
+    }" id="permalink">View Comments</a></p>
   </div>
   `;
   feed.appendChild(postDiv);
-  
 };
 
 // Generate the feed
@@ -90,8 +92,10 @@ subreddit.addEventListener("keydown", (e) => {
 
 ////////////////////////////////////////////////////
 ////////////////// Store History ///////////////////
-window.addEventListener('click', (e) => {
-  if(e.target.classList.contains('storable')){
-    console.log(e.target);
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("storable")) {
+    const link = e.target.getAttribute("href");
+    const title = e.target.parentElement.textContent;
+    localStorage.setItem(`${title}`, `${link}`);
   }
-})
+});

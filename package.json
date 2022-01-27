@@ -1,0 +1,28 @@
+{
+  "name": "viewedit",
+  "version": "1.0.0",
+  "description": "viewedIt is my first project after taking Colt Steele's Web Developer Bootcamp. The viewedIt application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mocker-nicholas/viewedIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mocker-nicholas/viewedIt/issues"
+  },
+  "homepage": "https://github.com/mocker-nicholas/viewedIt#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "node-fetch": "^3.2.0",
+    "path": "^0.12.7"
+  },
+  "type": "module"
+}

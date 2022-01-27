@@ -8,3 +8,6 @@ https://www.reddit.com/api/v1/authorize?client_id=CLIENT_ID&response_type=TYPE&
     state=RANDOM_STRING&redirect_uri=URI&duration=DURATION&scope=SCOPE_STRING
 
 `https://www.reddit.com/r/${subreddit}/${sort}/.json?count=20&t=${time}&limit=50`
+
+Start Mongo - brew services start mongodb-community@5.0
+Stop Mongo - brew services stop mongodb-community@5.0

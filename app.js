@@ -6,19 +6,18 @@ import ejsMate from 'ejs-mate';
 import fetch from 'node-fetch';
 
 const app = express();
-async function main() {
+(async function main() {
   try{
     await mongoose.connect('mongodb://localhost:27017/test');
     console.log('Mongoose Connected')
   } catch (e){
     console.log(e)
   }
-}
-main()
+})();
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.render('index.ejs')
 })
 
 

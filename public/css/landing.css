@@ -48,4 +48,40 @@ body {
   padding-bottom: 10px;
 }
 
+#landing-form {
+  background-color: #e5e5e5;
+  color: #14213d;
+  border-radius: 10px;
+}
+#landing-form h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+#landing-form form {
+  font-size: 1.5rem;
+}
+#landing-form form .user-input {
+  font-size: 1rem;
+  padding: 10px 10px;
+  outline: none;
+  border: 1px solid #14213d;
+  width: 100%;
+  border-radius: 5px;
+}
+#landing-form form .form-label {
+  margin-bottom: 0.25rem;
+}
+#landing-form form .register-select {
+  margin: 1rem 3rem;
+  font-size: 1rem;
+  color: #14213d;
+}
+#landing-form form button {
+  color: #14213d;
+  padding: 1rem 2rem;
+}
+#landing-form form button:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=landing.css.map */

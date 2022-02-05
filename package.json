@@ -4,7 +4,8 @@
   "description": "viewedIt is my first project after taking Colt Steele's Web Developer Bootcamp. The viewedIt application",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "sass": "sass --watch scss/src:public/css"
   },
   "repository": {
     "type": "git",

@@ -17,13 +17,11 @@ const app = express();
   }
 })();
 
-console.log(process.env.REDDIT_APP, process.env.REDDIT_SECRET);
-
 app.set("view-engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("landing.ejs");
 });
 
 app.listen(3000, () => {

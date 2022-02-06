@@ -6,6 +6,7 @@ import ejs from "ejs";
 import mongoose from "mongoose";
 import ejsMate from "ejs-mate";
 import fetch from "node-fetch";
+import userRouter from "./routes/users.js";
 
 const app = express();
 (async function main() {
@@ -20,17 +21,10 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   res.render("index");
-});
-
-app.post("/user/register", (req, res) => {
-  res.send(req.body);
-});
-
-app.get("/user/login", (req, res) => {
-  res.render("login");
 });
 
 app.listen(3000, () => {

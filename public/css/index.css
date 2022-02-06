@@ -57,7 +57,7 @@ body {
 
 #landing-form {
   background-color: #e5e5e5;
-  color: #14213d;
+  color: #000000;
   border-radius: 10px;
 }
 #landing-form h2 {
@@ -71,7 +71,7 @@ body {
   font-size: 1rem;
   padding: 10px 10px;
   outline: none;
-  border: 1px solid #14213d;
+  border: 1px solid #000000;
   width: 100%;
   border-radius: 5px;
 }
@@ -81,17 +81,17 @@ body {
 #landing-form form .register-select {
   margin: 1rem 3rem;
   font-size: 1rem;
-  color: #14213d;
+  color: #000000;
 }
 #landing-form form button {
-  color: #14213d;
+  color: #000000;
   padding: 1rem 2rem;
 }
 #landing-form form button:hover {
   cursor: pointer;
 }
 #landing-form form a {
-  background-color: #14213d;
+  background-color: #000000;
   color: #e5e5e5;
   padding: 1rem 2rem;
   text-align: center;

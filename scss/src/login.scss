@@ -15,5 +15,56 @@ body {
 
 form {
   background-color: util.$grey;
-  height: 50vh;
+  height: fit-content;
+  margin: 0 6rem 0 6rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    span {
+      color: util.$yellow;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    .form-label {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      width: 100%;
+      border: 1px solid;
+      outline: none;
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    background-color: util.$base-color;
+    color: util.$grey;
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  a {
+    background-color: util.$dark-blue;
+    color: util.$grey;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+  }
 }

@@ -14,7 +14,51 @@ body {
 
 form {
   background-color: #e5e5e5;
-  height: 50vh;
+  height: fit-content;
+  margin: 0 6rem 0 6rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+form h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+form h1 span {
+  color: #fca311;
+}
+form .form-group {
+  margin-bottom: 1rem;
+}
+form .form-group .form-label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+form .form-group input {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  border: 1px solid;
+  outline: none;
+  border-radius: 5px;
+}
+form button {
+  background-color: #000000;
+  color: #e5e5e5;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+form a {
+  background-color: #14213d;
+  color: #e5e5e5;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=login.css.map */

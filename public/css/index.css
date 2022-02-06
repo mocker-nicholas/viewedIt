@@ -6,6 +6,13 @@
 
 body {
   background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-light {
+  background-color: #e5e5e5;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 #landing {
@@ -82,6 +89,14 @@ body {
 }
 #landing-form form button:hover {
   cursor: pointer;
+}
+#landing-form form a {
+  background-color: #14213d;
+  color: #e5e5e5;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */

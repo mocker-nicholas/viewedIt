@@ -9,6 +9,13 @@
 
 body {
   background-color: util.$base-color;
+  color: util.$white;
+}
+
+.btn-light {
+  background-color: util.$grey;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 #landing {
@@ -95,6 +102,14 @@ body {
       &:hover {
         cursor: pointer;
       }
+    }
+    a {
+      background-color: util.$dark-blue;
+      color: util.$grey;
+      padding: 1rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1rem;
     }
   }
 }

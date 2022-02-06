@@ -29,6 +29,10 @@ app.post("/user/register", (req, res) => {
   res.send(req.body);
 });
 
+app.get("/user/login", (req, res) => {
+  res.render("login");
+});
+
 app.listen(3000, () => {
   console.log("Listing on Port 3000");
 });

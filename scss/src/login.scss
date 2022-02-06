@@ -1,0 +1,19 @@
+@use "../util.scss";
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: util.$base-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  background-color: util.$grey;
+  height: 50vh;
+}

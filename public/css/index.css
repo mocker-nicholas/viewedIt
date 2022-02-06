@@ -99,4 +99,53 @@ body {
   font-size: 1rem;
 }
 
+@media only screen and (max-width: 1024px) {
+  #landing {
+    flex-direction: column;
+    margin: 0;
+    height: 150vh;
+  }
+  #landing .flex-item {
+    width: 100%;
+    margin: 0;
+  }
+  #landing #landing-content {
+    font-size: 1.5rem;
+  }
+  #landing #landing-content #logo {
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+  }
+
+  #landing-form {
+    border-radius: 0px;
+  }
+  #landing-form h2 {
+    margin-bottom: 0.5rem;
+  }
+  #landing-form form .register-select {
+    margin: 1rem 0.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #landing {
+    flex-direction: column;
+    margin: 0;
+    height: fit-content;
+  }
+  #landing #register-submit {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  #landing #login {
+    display: block;
+  }
+}
+@media only screen and (max-height: 500px) {
+  #landing {
+    height: fit-content;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -1,1 +1,46 @@
+@use "../theme/colors.scss" as colors;
 
+body {
+  font-family: "Lato", "Sans-serif";
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+}
+
+.btn-light {
+  background-color: colors.$grey;
+  color: colors.$base-color;
+  padding: 0.75rem 2.5rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid colors.$base-color;
+
+  .btn-light:visited {
+    color: colors.$base-color;
+  }
+}
+
+.btn-dark {
+  background-color: colors.$dark-blue;
+  color: colors.$grey;
+  padding: 0.75rem 2.5rem;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  .btn-dark:visited {
+    color: colors.$grey;
+  }
+}

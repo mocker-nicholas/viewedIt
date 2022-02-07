@@ -1,3 +1,44 @@
+body {
+  font-family: "Lato", "Sans-serif";
+}
 
+.flex-row {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+}
+
+.btn-light {
+  background-color: #e5e5e5;
+  color: #000000;
+  padding: 0.75rem 2.5rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #000000;
+}
+.btn-light .btn-light:visited {
+  color: #000000;
+}
+
+.btn-dark {
+  background-color: #14213d;
+  color: #e5e5e5;
+  padding: 0.75rem 2.5rem;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-dark .btn-dark:visited {
+  color: #e5e5e5;
+}
 
 /*# sourceMappingURL=index.css.map */

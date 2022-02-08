@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Lato", "Sans-serif";
 }
@@ -5,6 +11,7 @@ body {
 .flex-row {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .flex-item {
@@ -12,16 +19,18 @@ body {
   flex-direction: column;
   justify-content: center;
   height: fit-content;
+  flex: 1 1 0px;
 }
 
 .btn-light {
   background-color: #e5e5e5;
   color: #000000;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2rem;
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
   border: 1px solid #000000;
+  font-size: 1rem;
 }
 .btn-light .btn-light:visited {
   color: #000000;
@@ -30,15 +39,77 @@ body {
 .btn-dark {
   background-color: #14213d;
   color: #e5e5e5;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2rem;
   display: inline-block;
   border: none;
   outline: none;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1rem;
 }
-.btn-dark .btn-dark:visited {
+.btn-dark:visited {
   color: #e5e5e5;
+}
+
+.form-group .form-label {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px 5px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+body #landing {
+  height: 100vh;
+  padding: 2rem;
+}
+body #landing .flex-item {
+  margin: 0 1rem;
+}
+body #landing #logo {
+  color: #fca311;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+body #landing #logo span {
+  color: #ffffff;
+}
+body #landing .landing-statements {
+  font-size: 2rem;
+}
+body #landing .landing-statements p {
+  margin-bottom: 1.5rem;
+}
+body #landing .landing-statements p span {
+  border-bottom: 4px dotted #fca311;
+}
+body #landing-form {
+  background-color: #e5e5e5;
+  color: #000000;
+  padding: 1rem;
+  border-radius: 10px;
+}
+body #landing-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+body #landing-form .tos {
+  margin: 0 2rem 1rem 2rem;
+}
+body #landing-form .tos #register-select {
+  width: fit-content;
+  display: inline;
+}
+body #landing-form a {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.css.map */

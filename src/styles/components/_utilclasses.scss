@@ -1,5 +1,11 @@
 @use "../theme/colors.scss" as colors;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Lato", "Sans-serif";
 }
@@ -7,6 +13,7 @@ body {
 .flex-row {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .flex-item {
@@ -14,16 +21,18 @@ body {
   flex-direction: column;
   justify-content: center;
   height: fit-content;
+  flex: 1 1 0px;
 }
 
 .btn-light {
   background-color: colors.$grey;
   color: colors.$base-color;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2rem;
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
   border: 1px solid colors.$base-color;
+  font-size: 1rem;
 
   .btn-light:visited {
     color: colors.$base-color;
@@ -33,14 +42,30 @@ body {
 .btn-dark {
   background-color: colors.$dark-blue;
   color: colors.$grey;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 2rem;
   display: inline-block;
   border: none;
   outline: none;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1rem;
 
-  .btn-dark:visited {
+  &:visited {
     color: colors.$grey;
+  }
+}
+
+.form-group {
+  .form-label {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
   }
 }

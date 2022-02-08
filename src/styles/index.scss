@@ -1,3 +1,64 @@
 @use "components/utilclasses";
-@use "theme/colors";
+@use "theme/colors" as colors;
 @use "typography/text";
+
+/////////////// Landing Page /////////////////
+body {
+  background-color: colors.$base-color;
+  color: colors.$white;
+
+  #landing {
+    height: 100vh;
+    padding: 2rem;
+
+    .flex-item {
+      margin: 0 1rem;
+    }
+
+    #logo {
+      color: colors.$yellow;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+
+      span {
+        color: colors.$white;
+      }
+    }
+
+    .landing-statements {
+      font-size: 2rem;
+
+      p {
+        margin-bottom: 1.5rem;
+
+        span {
+          border-bottom: 4px dotted colors.$yellow;
+        }
+      }
+    }
+  }
+
+  #landing-form {
+    background-color: colors.$grey;
+    color: colors.$base-color;
+    padding: 1rem;
+    border-radius: 10px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .tos {
+      margin: 0 2rem 1rem 2rem;
+
+      #register-select {
+        width: fit-content;
+        display: inline;
+      }
+    }
+
+    a {
+      font-weight: bold;
+    }
+  }
+}

@@ -2,38 +2,34 @@
 @use "theme/colors" as colors;
 @use "typography/text";
 
+//////////////////////////////////////////////
 /////////////// Landing Page /////////////////
-body {
-  background-color: colors.$base-color;
-  color: colors.$white;
+#landing {
+  height: 100vh;
+  padding: 2rem;
 
-  #landing {
-    height: 100vh;
-    padding: 2rem;
+  .flex-item {
+    margin: 0 1rem;
+  }
 
-    .flex-item {
-      margin: 0 1rem;
+  #logo {
+    color: colors.$yellow;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+    span {
+      color: colors.$white;
     }
+  }
 
-    #logo {
-      color: colors.$yellow;
-      font-size: 3rem;
-      margin-bottom: 2rem;
+  .landing-statements {
+    font-size: 2rem;
+
+    p {
+      margin-bottom: 1.5rem;
 
       span {
-        color: colors.$white;
-      }
-    }
-
-    .landing-statements {
-      font-size: 2rem;
-
-      p {
-        margin-bottom: 1.5rem;
-
-        span {
-          border-bottom: 4px dotted colors.$yellow;
-        }
+        border-bottom: 4px dotted colors.$yellow;
       }
     }
   }
@@ -56,9 +52,29 @@ body {
         display: inline;
       }
     }
+  }
+}
 
-    a {
-      font-weight: bold;
+//////////////////////////////////////////////
+//////////////// Login Page //////////////////
+
+#login-form {
+  background-color: colors.$grey;
+  color: colors.$base-color;
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 40%;
+
+  .black-bar {
+    background-color: colors.$base-color;
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    span {
+      color: colors.$yellow;
     }
   }
 }

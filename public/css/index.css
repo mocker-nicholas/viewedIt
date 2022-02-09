@@ -8,6 +8,12 @@ body {
   font-family: "Lato", "Sans-serif";
 }
 
+.full-body {
+  background-color: #000000;
+  color: #ffffff;
+  height: 100vh;
+}
+
 .flex-row {
   display: flex;
   justify-content: center;
@@ -63,53 +69,69 @@ body {
   font-size: 1rem;
 }
 
-body {
-  background-color: #000000;
-  color: #ffffff;
+a {
+  font-weight: bold;
 }
-body #landing {
+
+#landing {
   height: 100vh;
   padding: 2rem;
 }
-body #landing .flex-item {
+#landing .flex-item {
   margin: 0 1rem;
 }
-body #landing #logo {
+#landing #logo {
   color: #fca311;
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-body #landing #logo span {
+#landing #logo span {
   color: #ffffff;
 }
-body #landing .landing-statements {
+#landing .landing-statements {
   font-size: 2rem;
 }
-body #landing .landing-statements p {
+#landing .landing-statements p {
   margin-bottom: 1.5rem;
 }
-body #landing .landing-statements p span {
+#landing .landing-statements p span {
   border-bottom: 4px dotted #fca311;
 }
-body #landing-form {
+#landing #landing-form {
   background-color: #e5e5e5;
   color: #000000;
   padding: 1rem;
   border-radius: 10px;
 }
-body #landing-form h2 {
+#landing #landing-form h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-body #landing-form .tos {
+#landing #landing-form .tos {
   margin: 0 2rem 1rem 2rem;
 }
-body #landing-form .tos #register-select {
+#landing #landing-form .tos #register-select {
   width: fit-content;
   display: inline;
 }
-body #landing-form a {
-  font-weight: bold;
+
+#login-form {
+  background-color: #e5e5e5;
+  color: #000000;
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 40%;
+}
+#login-form .black-bar {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+#login-form .black-bar span {
+  color: #fca311;
 }
 
 /*# sourceMappingURL=index.css.map */

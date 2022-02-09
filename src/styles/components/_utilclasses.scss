@@ -10,6 +10,12 @@ body {
   font-family: "Lato", "Sans-serif";
 }
 
+.full-body {
+  background-color: colors.$base-color;
+  color: colors.$white;
+  height: 100vh;
+}
+
 .flex-row {
   display: flex;
   justify-content: center;

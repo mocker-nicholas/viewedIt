@@ -5,76 +5,94 @@
 //////////////////////////////////////////////
 /////////////// Landing Page /////////////////
 #landing {
-  height: 100vh;
-  padding: 2rem;
+  color: colors.$base-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .flex-item {
-    margin: 0 1rem;
-  }
+    width: 50%;
 
-  #logo {
-    color: colors.$yellow;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    #landing-content {
+      margin-left: 4rem;
 
-    span {
-      color: colors.$white;
-    }
-  }
+      #logo {
+        font-size: 4rem;
+        color: colors.$white;
+        background-color: colors.$base-color;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        margin-bottom: 1rem;
 
-  .landing-statements {
-    font-size: 2rem;
+        span {
+          color: colors.$base-color;
+          background-color: colors.$white;
+        }
+      }
 
-    p {
-      margin-bottom: 1.5rem;
+      .landing-statements {
+        font-size: 2rem;
 
-      span {
-        border-bottom: 4px dotted colors.$yellow;
+        p {
+          margin-bottom: 1.5rem;
+
+          span {
+            border-bottom: 0.25rem dotted colors.$yellow;
+          }
+        }
       }
     }
   }
 
   #landing-form {
-    background-color: colors.$grey;
-    color: colors.$base-color;
-    padding: 1rem;
-    border-radius: 10px;
+    height: 100vh;
+    background-color: colors.$base-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 2rem;
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .tos {
-      margin: 0 2rem 1rem 2rem;
+    form {
+      background-color: colors.$grey;
+      padding: 1rem;
+      border-radius: 10px;
 
-      #register-select {
-        width: fit-content;
-        display: inline;
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      .tos {
+        margin: 0rem 2rem 1rem 2rem;
+
+        input {
+          width: fit-content;
+          margin-right: 1rem;
+        }
       }
     }
   }
 }
 
-//////////////////////////////////////////////
-//////////////// Login Page //////////////////
+@media screen and (max-width: 1100px) {
+  #landing {
+    flex-direction: column;
 
-#login-form {
-  background-color: colors.$grey;
-  color: colors.$base-color;
-  padding: 1rem;
-  border-radius: 10px;
-  min-width: 40%;
+    .flex-item {
+      width: 100%;
 
-  .black-bar {
-    background-color: colors.$base-color;
-    color: colors.$white;
-    border: 1px solid colors.$white;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+      #landing-content {
+        margin: 0 0.5rem;
+        text-align: center;
 
-    span {
-      color: colors.$yellow;
+        #logo {
+          margin: 0.5rem auto;
+        }
+      }
+    }
+
+    #landing-form {
+      height: fit-content;
+      padding: 0.5rem;
     }
   }
 }

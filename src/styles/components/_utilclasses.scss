@@ -4,30 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: "Lato", "Sans-serif";
-}
-
-.full-body {
-  background-color: colors.$base-color;
-  color: colors.$white;
-  height: 100vh;
-}
-
-.flex-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: fit-content;
-  flex: 1 1 0px;
 }
 
 .btn-light {
@@ -46,7 +23,7 @@ body {
 }
 
 .btn-dark {
-  background-color: colors.$dark-blue;
+  background-color: colors.$base-color;
   color: colors.$grey;
   padding: 0.75rem 2rem;
   display: inline-block;

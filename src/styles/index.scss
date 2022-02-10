@@ -96,3 +96,23 @@
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  #landing-body {
+    #landing {
+      #landing-content {
+        #logo {
+          font-size: 3rem;
+        }
+
+        .landing-statements {
+          font-size: 1.5rem;
+
+          p {
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

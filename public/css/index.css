@@ -126,5 +126,16 @@ a {
     padding: 0.5rem;
   }
 }
+@media screen and (max-width: 650px) {
+  #landing-body #landing #landing-content #logo {
+    font-size: 3rem;
+  }
+  #landing-body #landing #landing-content .landing-statements {
+    font-size: 1.5rem;
+  }
+  #landing-body #landing #landing-content .landing-statements p {
+    margin-bottom: 0.75rem;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

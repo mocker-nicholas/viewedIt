@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/app/index", (req, res) => {
+  res.render("app/index");
+});
+
 app.listen(3000, () => {
   console.log("Listing on Port 3000");
 });

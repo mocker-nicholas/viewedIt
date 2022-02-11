@@ -26,13 +26,17 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({ username });
-  if (user) {
+router.post(
+  "/login",
+  catchAsync(async (req, res, next) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+    if (!user) {
+      req.flash("error", `Error: Username or Password is invalid`);
+      return res.redirect("login");
+    }
     return res.render("app/index", { user });
-  }
-  res.send("Cant find user");
-});
+  })
+);
 
 export default router;

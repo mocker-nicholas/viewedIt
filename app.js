@@ -43,6 +43,7 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   return next();
 });
+
 app.use("/user", userRouter);
 app.use("/app", appRouter);
 

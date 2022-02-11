@@ -55,10 +55,11 @@
 
 .error {
   background-color: colors.$error-light;
+  color: colors.$error;
   border: 2px solid colors.$error;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
   border-radius: 10px;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }

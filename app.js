@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 (async function main() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/test");
+    await mongoose.connect("mongodb://localhost:27017/viewedIt");
     console.log("Mongoose Connected");
   } catch (e) {
     console.log(e);

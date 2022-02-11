@@ -12,12 +12,12 @@ router.post(
       if (newUser) {
         const registeredUser = await newUser.save();
         req.session.user_id = user._id;
-        res.redirect("login");
         req.flash("success", "Your account has been created");
+        return res.redirect("login");
       }
     } catch (e) {
-      req.flash("error", `Error: ${e}`);
-      res.redirect("/");
+      req.flash("error", `${e}`);
+      return res.redirect("/");
     }
   })
 );

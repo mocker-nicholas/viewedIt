@@ -57,7 +57,18 @@
   background-color: colors.$error-light;
   color: colors.$error;
   border: 2px solid colors.$error;
-  margin: 0.5rem 0;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.sucess {
+  background-color: colors.$success-light;
+  color: colors.$success;
+  border: 2px solid colors.$success;
+  margin: 0.2rem 0;
   padding: 0.5rem;
   border-radius: 10px;
   width: 100%;

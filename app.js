@@ -7,6 +7,7 @@ import ejs from "ejs";
 import mongoose from "mongoose";
 import ejsMate from "ejs-mate";
 import fetch from "node-fetch";
+import ExpressError from "./util/expresserror.js";
 import userRouter from "./routes/users.js";
 import appRouter from "./routes/app.js";
 import session from "express-session";
@@ -35,12 +36,29 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  return next();
+});
 app.use("/user", userRouter);
 app.use("/app", appRouter);
-app.use(flash());
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.all("*", (req, res, next) => {
+  next(new ExpressError(404, "Page not found"));
+});
+
+app.use((err, req, res, next) => {
+  const { statusCode = 500, message = "Something went wrong...." } = err;
+  // the destructured default wont get passed through to our err object, so set that default manually.
+  if (!err.message) err.message("Oh No! Something went wrong!");
+  res.status(statusCode).render("error", { err });
 });
 
 app.listen(3000, () => {

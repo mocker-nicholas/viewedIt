@@ -46,6 +46,16 @@
   font-size: 1rem;
 }
 
+.error {
+  background-color: #ffcccb;
+  border: 2px solid #cc0000;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
 a {
   font-weight: bold;
 }

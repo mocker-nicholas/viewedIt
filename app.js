@@ -8,6 +8,9 @@ import mongoose from "mongoose";
 import ejsMate from "ejs-mate";
 import fetch from "node-fetch";
 import userRouter from "./routes/users.js";
+import appRouter from "./routes/app.js";
+import session from "express-session";
+import flash from "connect-flash";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,14 +27,20 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: "mysecret",
+    httpOnly: true,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 app.use("/user", userRouter);
+app.use("/app", appRouter);
+app.use(flash());
 
 app.get("/", (req, res) => {
   res.render("index");
-});
-
-app.get("/app/index", (req, res) => {
-  res.render("app/index");
 });
 
 app.listen(3000, () => {

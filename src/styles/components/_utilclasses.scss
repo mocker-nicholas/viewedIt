@@ -52,3 +52,13 @@
     font-size: 1rem;
   }
 }
+
+.error {
+  background-color: colors.$error-light;
+  border: 2px solid colors.$error;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.5rem;
+}

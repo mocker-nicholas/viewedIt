@@ -137,5 +137,43 @@ a {
     margin-bottom: 0.75rem;
   }
 }
+#login-body {
+  background-color: #14213d;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login-body .login-form {
+  color: #14213d;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 40%;
+  min-width: 370px;
+}
+#login-body .login-form .form-title {
+  font-size: 2rem;
+}
+#login-body .login-form .form-title #logo {
+  background-color: #14213d;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  display: inline;
+}
+#login-body .login-form .form-title #logo span {
+  background-color: #ffffff;
+  color: #14213d;
+}
+
+@media screen and (max-width: 380px) {
+  #login-body .login-form {
+    padding: 0.5rem;
+    max-width: 360px;
+  }
+  #login-body .login-form .form-title {
+    font-size: 2rem;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

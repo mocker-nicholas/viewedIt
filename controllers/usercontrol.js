@@ -18,7 +18,8 @@ export const registerUser = catchAsync(async (req, res) => {
       req.flash("error", `${username} is not an available username`);
       return res.redirect("/");
     }
-    next(e);
+    req.flash("error", `${e}`);
+    return res.redirect("/");
   }
 });
 

@@ -56,21 +56,21 @@
 .error {
   background-color: colors.$error-light;
   color: colors.$error;
-  border: 2px solid colors.$error;
+  border: 1px solid colors.$error;
   margin: 0.2rem 0;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100%;
   font-size: 1rem;
 }
 
-.sucess {
+.success {
   background-color: colors.$success-light;
   color: colors.$success;
-  border: 2px solid colors.$success;
+  border: 1px solid colors.$success;
   margin: 0.2rem 0;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100%;
   font-size: 1rem;
 }

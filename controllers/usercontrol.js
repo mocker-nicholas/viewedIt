@@ -31,9 +31,12 @@ export const loginUser = catchAsync(async (req, res, next) => {
     return res.redirect("login");
   }
   const validPassword = await bcrypt.compare(password, user.password);
-  if (!validPassword) {
-    req.flash("error", `Error: Username or Password is invalid`);
-    return res.redirect("login");
+  if (validPassword) {
+    /// Store the user id on the session ///
+    req.session.user = user._id;
+    req.flash("success", "You are now logged in!");
+    return res.redirect("/app/index");
   }
-  return res.render("app/index", { user });
+  req.flash("error", `Error: Username or Password is invalid`);
+  return res.redirect("login");
 });

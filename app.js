@@ -38,7 +38,8 @@ app.use(
 );
 app.use(flash());
 app.use((req, res, next) => {
-  res.locals.currentUser = req.user;
+  /// setup locals as session variables if you want ot access them in your template. After you create them here, you can define the req vals in your routes ///
+  res.locals.user = req.session.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   return next();

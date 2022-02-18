@@ -15,3 +15,11 @@ export const validateUser = (req, res, next) => {
   }
   return next();
 };
+
+export const isLoggedIn = (req, res, next) => {
+  if (req.session.user) {
+    return next();
+  }
+  req.flash("error", "Please sign in");
+  res.redirect("/user/login");
+};

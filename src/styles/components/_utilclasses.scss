@@ -126,6 +126,7 @@
   }
 }
 
+////////////// Navbar responsive //////////
 @media screen and (max-width: 1200px) {
   #navbar {
     .nav-container {
@@ -156,6 +157,21 @@
         .nav-ul {
           li {
             margin: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #navbar {
+    .nav-container {
+      .nav-item {
+        .nav-ul {
+          flex-direction: column;
+          li {
+            margin: 0.4rem 0.5rem;
           }
         }
       }

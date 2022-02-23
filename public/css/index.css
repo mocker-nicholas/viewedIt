@@ -132,6 +132,14 @@
     margin: 0 0.5rem;
   }
 }
+@media screen and (max-width: 850px) {
+  #navbar .nav-container .nav-item .nav-ul {
+    flex-direction: column;
+  }
+  #navbar .nav-container .nav-item .nav-ul li {
+    margin: 0.4rem 0.5rem;
+  }
+}
 a {
   font-weight: bold;
 }

@@ -9,6 +9,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .btn-light {
   background-color: #e5e5e5;
   color: #14213d;
@@ -83,6 +87,9 @@ a {
   margin: 0 auto;
   max-width: 1200px;
 }
+#navbar .nav-container .hamburger {
+  display: none;
+}
 #navbar .nav-container #nav-logo {
   font-size: 2rem;
   color: #ffffff;
@@ -113,6 +120,47 @@ a {
 }
 #navbar .nav-container .nav-item .nav-ul li a:hover {
   border-bottom: solid 2px #fca311;
+}
+
+.mobile-nav {
+  background-color: #14213d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-nav .mobile-nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.mobile-nav .mobile-nav-container .nav-item {
+  display: flex;
+  margin: 1.5rem 1rem;
+}
+.mobile-nav .mobile-nav-container .nav-item .nav-ul {
+  list-style: none;
+}
+.mobile-nav .mobile-nav-container .nav-item .nav-ul li {
+  margin: 0 1.5rem 1rem 1.5rem;
+}
+.mobile-nav .mobile-nav-container .nav-item .nav-ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding: 4px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.mobile-nav .mobile-nav-container .nav-item .nav-ul li a:hover {
+  border-bottom: solid 2px #fca311;
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {

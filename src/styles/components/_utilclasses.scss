@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .btn-light {
   background-color: colors.$grey;
   color: colors.$base-color;
@@ -79,7 +83,7 @@ a {
   font-size: 1rem;
 }
 
-// navbar
+//////////////// navbar styles ////////////////
 #navbar {
   background-color: colors.$base-color;
   width: 100%;
@@ -90,6 +94,10 @@ a {
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
+
+    .hamburger {
+      display: none;
+    }
 
     #nav-logo {
       font-size: 2rem;
@@ -130,6 +138,52 @@ a {
   }
 }
 
+.mobile-nav {
+  background-color: colors.$base-color;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mobile-nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .nav-item {
+      display: flex;
+      margin: 1.5rem 1rem;
+
+      .nav-ul {
+        list-style: none;
+
+        li {
+          margin: 0 1.5rem 1rem 1.5rem;
+
+          a {
+            color: colors.$white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding: 4px;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+
+            &:hover {
+              border-bottom: solid 2px colors.$yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
 ////////////// Navbar responsive //////////
 @media screen and (max-width: 1200px) {
   #navbar {

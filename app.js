@@ -6,7 +6,6 @@ import { fileURLToPath } from "url";
 import ejs from "ejs";
 import mongoose from "mongoose";
 import ejsMate from "ejs-mate";
-import fetch from "node-fetch";
 import ExpressError from "./util/expresserror.js";
 import userRouter from "./routes/users.js";
 import appRouter from "./routes/app.js";

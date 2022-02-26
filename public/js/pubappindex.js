@@ -11,7 +11,12 @@ const showError = (e) => {
 
 const popData = (posts) => {
   const postContainer = document.querySelector(".container");
-  postContainer.innerText = posts;
+  return;
+};
+
+const createPost = (post) => {
+  const card = document.createElement(div);
+  return;
 };
 
 const topPosts = async () => {

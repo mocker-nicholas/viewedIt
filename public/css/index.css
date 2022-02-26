@@ -361,5 +361,19 @@ a {
     font-size: 2rem;
   }
 }
+.container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.card {
+  border: 2px solid red;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  max-width: 20%;
+}
+.card img {
+  width: 100%;
+  background: center;
+}
 
 /*# sourceMappingURL=index.css.map */

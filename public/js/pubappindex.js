@@ -14,21 +14,22 @@ const createPost = (post) => {
   const newPost = document.createElement("div");
   const data = post.data;
   newPost.innerHTML = `<div class="card">
-  <img
-    src="https://images.unsplash.com/photo-1645817744713-3f005cbd7deb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-    alt=""
-  />
-  <div class="card-content">
-    <p>Title: ${data.title}</p>
-    <p>Poster:${data.author_fullname}</p>
-    <p>Source:</p>
+  <div class="post-preview">
+    <img
+      src="${data.thumbnail}"
+      alt="No Thumbnail"
+    />
     <div class="stats">
-      <span>Upvotes: ${data.ups} </span>
-      <span>Awards: ${data.total_awards_recieved}</span>
-      <span>Posted: </span>
+      <p><span class="bold">Upvotes: </span> ${data.ups}</p>
+      <p><span class="bold">Awards: </span>${data.total_awards_received}</p>
+      <p><span class="bold">Posted: </span></p>
     </div>
   </div>
-</div>
+  <div class="card-content">
+    <p><span class="bold">Title: </span>${data.title}</p>
+    <p><span class="bold">Poster: </span>${data.author}</p>
+    <p><span class="bold">Source: </span></p>
+  </div>
 </div>`;
   return postContainer.appendChild(newPost);
 };

@@ -4,12 +4,29 @@
 }
 
 .card {
-  border: 2px solid red;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  max-width: 20%;
+  max-width: 25%;
+  min-width: 15rem;
 
   img {
     width: 100%;
     background: center;
+  }
+
+  .card-content {
+    padding: 4px;
+
+    p {
+      border-bottom: 2px solid grey;
+      margin-bottom: 8px;
+    }
+
+    .stats {
+      display: flex;
+
+      span {
+        margin: 0 auto 0 auto;
+      }
+    }
   }
 }

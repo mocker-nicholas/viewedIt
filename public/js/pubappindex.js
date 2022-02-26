@@ -9,14 +9,40 @@ const showError = (e) => {
   return console.log(e);
 };
 
-const popData = (posts) => {
+const createPost = (post) => {
   const postContainer = document.querySelector(".container");
-  return;
+  const newPost = document.createElement("div");
+  const data = post.data;
+  newPost.innerHTML = `<div class="card">
+  <img
+    src="https://images.unsplash.com/photo-1645817744713-3f005cbd7deb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+    alt=""
+  />
+  <div class="card-content">
+    <p>Title: ${data.title}</p>
+    <p>Poster:${data.author_fullname}</p>
+    <p>Source:</p>
+    <div class="stats">
+      <span>Upvotes: ${data.ups} </span>
+      <span>Awards: ${data.total_awards_recieved}</span>
+      <span>Posted: </span>
+    </div>
+  </div>
+</div>
+</div>`;
+  return postContainer.appendChild(newPost);
 };
 
-const createPost = (post) => {
-  const card = document.createElement(div);
-  return;
+const popData = (posts) => {
+  console.log(posts.length);
+  if (posts) {
+    for (let post of posts) {
+      createPost(post);
+    }
+    return;
+  }
+
+  return showError("No Posts");
 };
 
 const topPosts = async () => {

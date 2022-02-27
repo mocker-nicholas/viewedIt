@@ -19,4 +19,16 @@ router.get("/index/top", isLoggedIn, async (req, res) => {
   }
 });
 
+router.get("/index/sports", isLoggedIn, async (req, res) => {
+  try {
+    const response = await fetch(
+      `https://www.reddit.com/r/sports/top.json?t=day&limit=20`
+    );
+    const data = await response.json();
+    return res.json(data.data.children);
+  } catch (e) {
+    return res.json(e);
+  }
+});
+
 export default router;

@@ -21,8 +21,6 @@ const convertEpoch = (seconds) => {
   return `${hours}:${minutes} ${ampm}`;
 };
 
-console.log(convertEpoch(1645859999.0));
-
 const createPost = (post) => {
   const postContainer = document.querySelector(".container");
   const newPost = document.createElement("div");
@@ -48,14 +46,21 @@ const createPost = (post) => {
       <p><span class="bold">Poster: </span>${data.author}</p>
       <p><span class="bold">Source: </span></p>
       <div class="comments">
-      <p><span class="bold">Comments: </span>${data.num_comments}</p>
-      <p><span class="bold">Posted: </span>${convertEpoch(data.created_utc)}</p>
+        <p><a href="https://www.reddit.com${
+          data.permalink
+        }" target="_blank"><span class="bold">Comments: </span>${
+    data.num_comments
+  }</a></p>
+        <p><span class="bold">Posted: </span>${convertEpoch(
+          data.created_utc
+        )}</p>
       </div>
     </div>
   </div>`;
   return postContainer.appendChild(newPost);
 };
 
+//////////////// Create posts, assuming an array of reddit posts are passed in //////////////
 const popData = (posts) => {
   if (posts) {
     for (let post of posts) {
@@ -67,6 +72,7 @@ const popData = (posts) => {
   return showError("No Posts");
 };
 
+///////// Get top posts when page loads ///////////
 const topPosts = async () => {
   try {
     const response = await fetch(`${window.location.href}/top`);
@@ -77,4 +83,23 @@ const topPosts = async () => {
   }
 };
 
+const changeCat = async (sub) => {
+  try {
+    const postContainer = document.querySelector(".container");
+    postContainer.innerHTML = "";
+    const response = await fetch(`${window.location.href}/${sub}`);
+    const data = await response.json();
+    return popData(data);
+  } catch (e) {
+    return showError(e);
+  }
+};
+
+////// Load basic top post data as homepage //////////
 topPosts();
+
+////// Add event listener links to pass in that category to server //////////
+const sports = document.getElementById("sports");
+sports.addEventListener("click", async (e) => {
+  return changeCat("sports");
+});

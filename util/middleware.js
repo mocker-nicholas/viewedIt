@@ -11,6 +11,10 @@ export const validateUser = (req, res, next) => {
   const { error } = validUserSchema.validate(req.body);
   if (error) {
     const msg = error.details.map((el) => el.message).join(",");
+    if (msg) {
+      req.flash("error", `${msg}`);
+      return res.redirect("/");
+    }
     return next(error);
   }
   return next();

@@ -3,10 +3,9 @@ const showError = (element, e) => {
   return console.log(e);
 };
 
+///////////// Hide Mobile nav Ham when Clicked ///////////////////
 const hamburger = document.querySelector(".hamburger");
 const mobilenav = document.querySelector(".mobile-nav");
-
-///////////// Hide Mobile nav Ham when Clicked ///////////////////
 hamburger.addEventListener("click", () => {
   mobilenav.classList.toggle("hide");
 });
@@ -99,6 +98,8 @@ const createPost = (post) => {
 
 //////////////// Create posts, assuming an array of reddit posts are passed in //////////////
 const popData = (posts) => {
+  const postContainer = document.querySelector(".container");
+  postContainer.innerHTML = "";
   if (posts) {
     for (let post of posts) {
       if (post.data.thumbnail === "default" || post.data.thumbnail === "self") {
@@ -115,23 +116,17 @@ const popData = (posts) => {
   return showError("No Posts");
 };
 
+////////////////////// Get posts from a requested subreddit or subreddits ///////////////////
+const getPosts = async (subreddit) => {
+  const response = await fetch(`${window.location.href}/${subreddit}`);
+  const posts = await response.json();
+  return popData(posts);
+};
+
 ///////// Get top posts when page loads ///////////
 const topPosts = async () => {
   try {
-    const response = await fetch(`${window.location.href}/top`);
-    const data = await response.json();
-    return popData(data);
-  } catch (e) {
-    return showError(e);
-  }
-};
-
-//////////////////// make a request for a new group of posts based on subreddit /////////////////
-const changeCat = async (sub) => {
-  try {
-    const postContainer = document.querySelector(".container");
-    postContainer.innerHTML = "";
-    const response = await fetch(`${window.location.href}/${sub}`);
+    const response = await fetch(`${window.location.href}/all`);
     const data = await response.json();
     return popData(data);
   } catch (e) {

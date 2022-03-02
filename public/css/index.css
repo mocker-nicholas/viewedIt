@@ -395,6 +395,17 @@ a {
 .card .post-preview .stats span {
   margin: 0 auto 0 auto;
 }
+.card .post-preview .stats-straight {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25rem;
+  gap: 0.5rem;
+}
+.card .post-preview .stats-straight span {
+  margin: 0 auto 0 auto;
+}
 .card .card-content {
   padding: 4px;
 }

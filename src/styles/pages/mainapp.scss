@@ -13,6 +13,14 @@
   border: 1px solid colors.$base-color;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border: 2px solid colors.$yellow;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 
   .post-preview {
     display: flex;
@@ -66,3 +74,5 @@
     }
   }
 }
+
+/////////// animations /////////////

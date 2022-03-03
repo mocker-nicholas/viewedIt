@@ -29,7 +29,10 @@ ul {
 }
 
 .btn-dark {
-  background-color: #14213d;
+  background-image: linear-gradient(45deg, #14213d, #000000);
+  background-size: 400%;
+  background-position: left;
+  animation: btn-dark-anim 3s infinite alternate;
   color: #e5e5e5;
   padding: 0.75rem 2rem;
   display: inline-block;
@@ -38,11 +41,24 @@ ul {
   cursor: pointer;
   text-decoration: none;
   font-size: 1rem;
+  transition: background-position 2s ease-in;
 }
 .btn-dark:visited {
   color: #e5e5e5;
 }
+.btn-dark:hover {
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
 
+@keyframes btn-dark-anim {
+  0% {
+    background-postion: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
 .form-group .form-label {
   font-size: 1.25rem;
   margin-bottom: 0.25rem;

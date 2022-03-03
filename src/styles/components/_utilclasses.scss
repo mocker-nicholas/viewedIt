@@ -32,7 +32,10 @@ ul {
 }
 
 .btn-dark {
-  background-color: colors.$base-color;
+  background-image: colors.$dark-gradient;
+  background-size: 400%;
+  background-position: left;
+  animation: btn-dark-anim 3s infinite alternate;
   color: colors.$grey;
   padding: 0.75rem 2rem;
   display: inline-block;
@@ -41,9 +44,24 @@ ul {
   cursor: pointer;
   text-decoration: none;
   font-size: 1rem;
+  transition: background-position 2s ease-in;
 
   &:visited {
     color: colors.$grey;
+  }
+
+  &:hover {
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes btn-dark-anim {
+  0% {
+    background-postion: left;
+  }
+  100% {
+    background-position: right;
   }
 }
 
